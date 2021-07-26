@@ -11,6 +11,7 @@ def main(uploadopt: dict) -> str:
     # params
     container = uploadopt['container']
     data = uploadopt['data']
+    index = uploadopt['index']
 
     # instantiates storage client
     storage_client = get_storage_client()
@@ -25,8 +26,8 @@ def main(uploadopt: dict) -> str:
     # creates blob
     today = datetime.today().date()
     path = f'{today.year}/{today.month}/{today.day}'
-    blob_name = f'{path}/{today.year}{today.month}{today.day}_transportepoa.json'
-    json_data = json.dumps(data) 
+    blob_name = f'{path}/{today.year}{today.month}{today.day}_transportepoa_{index}.json'
+    json_data = json.dumps(data)
     blob = conteiner_client.upload_blob(name=blob_name, data=json_data, overwrite=True)
 
     return 'succeed'
