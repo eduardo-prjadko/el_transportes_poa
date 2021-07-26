@@ -23,3 +23,5 @@ Deploy the local project, as it is, to an existing function or create a new, fol
 The required environment variables for the app are two:
 * URL - the endpoit where data will be downloaded.
 * CONTAINER - the name of the azure storage container where data will be saved. There is no need the create previously the container, since the app automatocally creates it.
+
+It can be set in VSCode or Azure Portal. FOr more information about setting environment variables on Azure Functions follow [this link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=portal). 
