@@ -38,7 +38,7 @@ def get_env_var():
 def get_storage_client():
     global storage_client
     if not storage_client:
-        conn_string = os.environ.get('AzureWebJobsTransportePOAStorage')
+        conn_string = os.environ.get('AzureWebJobsStorage')
         storage_client = BlobServiceClient.from_connection_string(conn_string)
     
     return storage_client
