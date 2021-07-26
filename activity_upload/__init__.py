@@ -1,6 +1,5 @@
 from datetime import datetime
 import json
-import logging
 
 from azure.core.exceptions import ResourceNotFoundError
 
