@@ -1,6 +1,6 @@
 # Extract and Load procedure 
 
-The current repo is a simple extract and load procedure mounted on an Azure Functions structure. Since it doesn't cover the transform step of a classic ELT pipeline, this app simply downloads the entire data of a chosen public API (no credentials required) and stores it in a storage container. 
+The current repo is a simple extract and load procedure mounted on an Azure Functions structure. Since it doesn't cover the transform step of a classic ELT pipeline, this app simply downloads the entire data of the public API https://dadosabertos.poa.br/api/3/action/datastore_search?resource_id=cb96a73e-e18b-4371-95c5-2cf20e359e6c (no credentials required) and stores it in a storage container. 
 
 # installation
 
@@ -15,13 +15,13 @@ git clone https://github.com/eduardo-prjadko/el_transportes_poa.git .
 ### **Upload to Azure Functions**
 In the Azure Functions extension tab, refresh the functions workspace so that the extension can identfy the project on the *Local Project* folder.
 <br>
-![local project example](images/local_project.png "local project")
+![local project example](images/el_project.png "local project")
 <br>
 Deploy the local project, as it is, to an existing function or create a new, following the instructions in VSCode.
 
 ### **Setup the environment variables**
 The required environment variables for the app are two:
-* URL - the endpoit where data will be downloaded.
+* LIMIT - number of rows retrieved from endpoint
 * CONTAINER - the name of the azure storage container where data will be saved. There is no need the create previously the container, since the app automatocally creates it.
 
 It can be set in VSCode or Azure Portal. FOr more information about setting environment variables on Azure Functions follow [this link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=portal). 
