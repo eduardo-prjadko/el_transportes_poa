@@ -1,4 +1,5 @@
 import os
+from string import Template
 
 from azure.storage.blob import BlobServiceClient
 import requests
@@ -11,8 +12,10 @@ storage_client = None
 
 # class for environment variables
 class EnvVar:
-    URL = None
+    HOST = 'https://dadosabertos.poa.br'
+    ENDPOINT= Template('/api/3/action/datastore_search?limit=$limit&offset=$offset&resource_id=cb96a73e-e18b-4371-95c5-2cf20e359e6c')
     CONTAINER = None
+    LIMIT = None
 
 def get_session():
     global session
@@ -30,8 +33,8 @@ def get_env_var():
     global env
     if not env:
         env = EnvVar()
-        env.URL = os.environ.get('URL')
         env.CONTAINER = os.environ.get('CONTAINER')
+        env.LIMIT = os.environ.get('LIMIT')
     
     return env
 
