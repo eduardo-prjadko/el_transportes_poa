@@ -4,7 +4,7 @@ The current repo is a simple extract and load procedure mounted on an Azure Func
 
 # installation
 
-The step by step installation guide will cover the installation trough VSCode integration with Azure Functions. For a guide on development environment setup, please, follow the steps on [this tutorial](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=python). After completing the tutorial, you will be ready to install the **el_transportes_poa**.
+The step by step installation guide will cover the installation trough VSCode integration with Azure Functions. For a guide about development environment setup, please, follow the steps in [this tutorial](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=python). After completing the tutorial, you will be ready to install the **el_transportes_poa**.
 
 ### **Clone repository**
 Create and open a folder in VSCode. Open the terminal in VSCode and clone the repository to the current folder:
@@ -22,6 +22,6 @@ Deploy the local project, as it is, to an existing function or create a new, fol
 ### **Setup the environment variables**
 The required environment variables for the app are two:
 * LIMIT - number of rows retrieved from endpoint
-* CONTAINER - the name of the azure storage container where data will be saved. There is no need the create previously the container, since the app automatocally creates it.
+* CONTAINER - the name of the azure storage container where data will be saved. There is no need the previously create the container, since the app automatocally creates it.
 
 It can be set in VSCode or Azure Portal. FOr more information about setting environment variables on Azure Functions follow [this link](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=portal). 
