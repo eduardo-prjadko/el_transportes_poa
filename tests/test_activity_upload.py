@@ -11,7 +11,8 @@ def dumb_data():
 def test_activity_upload(dumb_data):
     parms = {
         'container': 'testcontainer',
-        'data': dumb_data
+        'data': dumb_data,
+        'index': 0
     }
     r = activity_upload.main(parms)
-    assert isinstance(r, BlobClient)
+    assert r == 'succeed'

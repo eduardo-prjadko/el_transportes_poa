@@ -7,7 +7,8 @@ def test_get_session():
 
 def test_get_env_var():
     r = instances.get_env_var()
-    assert r.URL
+    assert r.CONTAINER
+    assert r.LIMIT
 
 def test_get_storage_client():
     r = instances.get_storage_client()
