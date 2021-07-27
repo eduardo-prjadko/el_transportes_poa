@@ -2,7 +2,7 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "endpoint",
+      "name": "url",
       "type": "activityTrigger",
       "direction": "in"
     }
