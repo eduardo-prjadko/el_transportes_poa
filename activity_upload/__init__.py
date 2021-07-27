@@ -27,7 +27,7 @@ def main(uploadopt: dict) -> str:
     today = datetime.today().date()
     path = f'{today.year}/{today.month}/{today.day}'
     blob_name = f'{path}/{today.year}{today.month}{today.day}_transportepoa_{str(index)}.json'
-    json_data = json.dumps(data)
+    json_data = json.dumps(data, ensure_ascii=False)
     blob = conteiner_client.upload_blob(name=blob_name, data=json_data, overwrite=True)
 
     return 'succeed'
